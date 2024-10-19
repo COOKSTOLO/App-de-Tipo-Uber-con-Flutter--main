@@ -52,12 +52,12 @@ class LoginContent extends StatelessWidget {
            margin: EdgeInsets.only(left: 50, bottom: 0),
            decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end:Alignment.topCenter,
+              begin: Alignment.topLeft,
+              end:Alignment.bottomRight,
               colors: [
-                const Color.fromARGB(255, 1, 21, 36),
-                const Color.fromARGB(255, 12, 2, 34),
-                const Color.fromARGB(255, 0, 2, 24)
+                Color.fromARGB(255, 4, 20, 78),
+                Color.fromARGB(255, 3, 37, 172),
+                Color.fromARGB(255, 32, 109, 198)
               ]
             ),
             

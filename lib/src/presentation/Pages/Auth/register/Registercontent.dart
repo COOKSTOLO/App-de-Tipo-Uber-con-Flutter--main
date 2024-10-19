@@ -44,9 +44,9 @@ class Registercontent extends StatelessWidget {
               begin: Alignment.topLeft,
               end:Alignment.bottomRight,
               colors: [
-                Color.fromARGB(255, 223, 234, 242),
-                Color.fromARGB(255, 219, 218, 220),
-                Color.fromARGB(255, 208, 208, 208)
+                Color.fromARGB(255, 4, 20, 78),
+                Color.fromARGB(255, 13, 50, 198),
+                Color.fromARGB(255, 32, 109, 198)
               ]
             )
           ),

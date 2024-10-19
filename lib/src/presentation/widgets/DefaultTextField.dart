@@ -12,7 +12,7 @@ class DefaultTextField extends StatelessWidget{
     DefaultTextField({
       required this.text,
       required this.icon,
-      this.color = Colors.black,
+      this.color = Colors.white,
       this.Margin = const EdgeInsets.only(left: 20, right: 20),
       
     });
