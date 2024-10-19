@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
+  
 
+   Function() onPressed;
    String text;
    Color color;
    Color textColor;
@@ -10,6 +12,7 @@ class DefaultButton extends StatelessWidget {
 
   DefaultButton({
     required this.text,
+    required this.onPressed,
     this.color = const Color.fromARGB(255, 29, 13, 171),
     this.textColor = Colors.white,
     this.ButtomMargin = const EdgeInsets.only(left: 40, right: 40),
@@ -24,7 +27,9 @@ class DefaultButton extends StatelessWidget {
     
       margin: EdgeInsets.only(top: 150,right: 30,left: 30),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          onPressed();
+        },
         style: ElevatedButton.styleFrom(
         backgroundColor:color
         ),

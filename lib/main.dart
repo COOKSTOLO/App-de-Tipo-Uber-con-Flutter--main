@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/register/RegisterPage.dart';
-import 'package:flutter_application_1/src/presentation/Pages/auth/login/LoginPage.dart';
+import 'package:flutter_application_1/src/presentation/Pages/auth/login/LoginContent/LoginPage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {

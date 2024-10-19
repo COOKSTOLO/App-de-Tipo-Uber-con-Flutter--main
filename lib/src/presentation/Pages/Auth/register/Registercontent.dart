@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultButton.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Registercontent extends StatelessWidget {
   const Registercontent({super.key});
@@ -95,8 +97,10 @@ class Registercontent extends StatelessWidget {
                     DefaultButton(
                       text: "Create User",
                       ButtomMargin: EdgeInsets.only(top: 20),
-                      
-                      ),
+                      onPressed: () {
+                        Bloc?.add(FormSubmit());
+                      },  
+                    ),
                       SizedBox(height: 15),
                       _AlreadyHaveAccount(context),
                     

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginBloc.dart';
-import 'package:flutter_application_1/src/presentation/Pages/Auth/register/RegisterPage.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
 
 
@@ -16,9 +15,7 @@ class LoginContent extends StatelessWidget {
       key: bloc?.state.formKey,
       child: Stack(
         children: [
-          
           Container(
-            
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
