@@ -38,71 +38,87 @@ class Registercontent extends StatelessWidget {
         ),
 
         Container(
-          margin: EdgeInsets.only(left: 50, ),
+          margin: EdgeInsets.only(left: 60, ),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end:Alignment.bottomRight,
               colors: [
-                const Color.fromARGB(255, 1, 21, 36),
-                const Color.fromARGB(255, 12, 2, 34),
-                const Color.fromARGB(255, 0, 2, 24)
+                Color.fromARGB(255, 223, 234, 242),
+                Color.fromARGB(255, 219, 218, 220),
+                Color.fromARGB(255, 208, 208, 208)
               ]
             )
           ),
-          child: Column(
+          child: Stack(
             children: [
-              _imageBanner(),
-
-              DefaultTextField(
-                text: 'Name',
-                icon: Icons.person,
-                Margin: EdgeInsets.only(top:35,left: 20,right: 50)
-                ),
-                SizedBox(height: 5),
-
-                DefaultTextField(
-                text: 'Email',
-                icon: Icons.email_rounded,
-                Margin: EdgeInsets.only(left: 20,right: 50)
-                ),
-                SizedBox(height: 5),
-
-                DefaultTextField(
-                text: 'Number',
-                icon: Icons.phone,
-                Margin: EdgeInsets.only(left: 20,right: 50)
+              _ImageBackground(context),
+              Column(
+                children: [
+                  _imageBanner(),
+                  DefaultTextField(
+                    text: 'Name',
+                    icon: Icons.person,
+                    Margin: EdgeInsets.only(top:35,left: 20,right: 50)
+                    ),
+                    SizedBox(height: 5),
               
-                ),
-                SizedBox(height: 5),
-
-                DefaultTextField(
-                text: 'Password',
-                icon: Icons.lock,
-                Margin: EdgeInsets.only(left: 20,right: 50)
-                
-                ),
-                SizedBox(height: 5),
-
-                DefaultTextField(
-                text: 'Confirm Password',
-                icon: Icons.person,
-                Margin: EdgeInsets.only(left: 20,right: 50)
-                ),
-
-                DefaultButton(
-                  text: "Create User",
-                  ButtomMargin: EdgeInsets.only(top: 20),
+                    DefaultTextField(
+                    text: 'Email',
+                    icon: Icons.email_rounded,
+                    Margin: EdgeInsets.only(left: 20,right: 50)
+                    ),
+                    SizedBox(height: 5),
+              
+                    DefaultTextField(
+                    text: 'Number',
+                    icon: Icons.phone,
+                    Margin: EdgeInsets.only(left: 20,right: 50)
                   
-                  ),
-                  SizedBox(height: 15),
-                  _AlreadyHaveAccount(context),
-                
+                    ),
+                    SizedBox(height: 5),
+              
+                    DefaultTextField(
+                    text: 'Password',
+                    icon: Icons.lock,
+                    Margin: EdgeInsets.only(left: 20,right: 50)
+                    
+                    ),
+                    SizedBox(height: 5),
+              
+                    DefaultTextField(
+                    text: 'Confirm Password',
+                    icon: Icons.person,
+                    Margin: EdgeInsets.only(left: 20,right: 50)
+                    ),
+              
+                    DefaultButton(
+                      text: "Create User",
+                      ButtomMargin: EdgeInsets.only(top: 20),
+                      
+                      ),
+                      SizedBox(height: 15),
+                      _AlreadyHaveAccount(context),
+                    
+                ],
+              
+              ),
             ],
-
           ),
-        )
+        ),
       ],
+    );
+  }
+  
+  Widget _ImageBackground(BuildContext context){
+    return Container(
+      alignment: Alignment.center,
+      child: Image.asset(
+        'assets/img/destination.png',
+        width: MediaQuery.of(context).size.width * 0.6,
+        height: MediaQuery.of(context).size.height * 0.6,
+        opacity: AlwaysStoppedAnimation(0.6),
+      ),
     );
   }
 
@@ -112,7 +128,7 @@ class Registercontent extends StatelessWidget {
                   children:[
                   Text("Already Have Account ? ",
                   style: TextStyle(
-                    color: Colors.white
+                    color: Colors.black
                    ),
                   ),
                   SizedBox
@@ -124,7 +140,7 @@ class Registercontent extends StatelessWidget {
                     },
                     child: Text("Log In",
                     style: TextStyle(
-                      color : Colors.white,
+                      color : Colors.black,
                       fontWeight: FontWeight.bold
                     ),
                     ),

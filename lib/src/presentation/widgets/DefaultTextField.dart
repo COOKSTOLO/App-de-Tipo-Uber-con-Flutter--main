@@ -5,11 +5,14 @@ class DefaultTextField extends StatelessWidget{
 
     String text;
     IconData icon;
+    Color color;
     EdgeInsetsGeometry Margin;
+    
     
     DefaultTextField({
       required this.text,
       required this.icon,
+      this.color = Colors.black,
       this.Margin = const EdgeInsets.only(left: 20, right: 20),
       
     });
@@ -22,7 +25,7 @@ class DefaultTextField extends StatelessWidget{
                     decoration: InputDecoration(  
                       label: Text(text,
                       style:TextStyle(
-                        color: Colors.white
+                        color: color,
                       )
                       ),
                        icon: Icon(

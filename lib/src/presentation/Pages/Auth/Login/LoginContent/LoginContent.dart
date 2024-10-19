@@ -99,12 +99,14 @@ class LoginContent extends StatelessWidget {
                 // TextField de Email
                 DefaultTextField(
                   text: 'Email', 
-                  icon: Icons.email
+                  icon: Icons.email,
+                  color: Colors.white,
                   ),
 
                 DefaultTextField(
-                  text: 'Email', 
-                  icon: Icons.lock
+                  text: 'Password', 
+                  icon: Icons.lock,
+                  color: Colors.white,
                   ),
                 
                 Container(
