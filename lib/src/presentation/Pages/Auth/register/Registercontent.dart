@@ -29,7 +29,7 @@ class Registercontent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _textLoginRotated(),
+              _textLoginRotated(context),
               SizedBox(height: 50),
               _textRegisterRotated(),
               SizedBox(height: 90),
@@ -44,8 +44,9 @@ class Registercontent extends StatelessWidget {
               begin: Alignment.topLeft,
               end:Alignment.bottomRight,
               colors: [
-                Color.fromARGB(255, 7, 8, 62),
-                Color.fromARGB(255, 26, 26, 163),
+                const Color.fromARGB(255, 1, 21, 36),
+                const Color.fromARGB(255, 12, 2, 34),
+                const Color.fromARGB(255, 0, 2, 24)
               ]
             )
           ),
@@ -94,7 +95,7 @@ class Registercontent extends StatelessWidget {
                   ButtomMargin: EdgeInsets.only(top: 20),
                   
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   _AlreadyHaveAccount(context),
                 
             ],
@@ -159,14 +160,19 @@ class Registercontent extends StatelessWidget {
     );
   }
 
-  Widget _textLoginRotated() {
-    return const RotatedBox(
-      quarterTurns: 1,
-      child: Text(
-        "Login",
-        style: TextStyle(
-          fontSize: 24,
-          color: Colors.white,
+  Widget _textLoginRotated(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, 'Login');
+      },
+      child: const RotatedBox(
+        quarterTurns: 1,
+        child: Text(
+          "Login",
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.white,
+          ),
         ),
       ),
     );
