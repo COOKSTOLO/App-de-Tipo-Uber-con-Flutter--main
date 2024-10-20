@@ -16,14 +16,16 @@ class LoginBloc extends Bloc<Loginevent, Loginstate> {
     on<EmailChanged>((event, emit) {
       emit(
         state.copyWith(
-          email: event.email
+          email: event.email,
+          formKey: formKey
         )
       );
     });
     on<PasswordChanged>((event, emit) {
       emit(
         state.copyWith(
-          password: event.password
+          password: event.password,
+          formKey: formKey
         )
       );
     });

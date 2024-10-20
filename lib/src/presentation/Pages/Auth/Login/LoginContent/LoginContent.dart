@@ -102,12 +102,18 @@ class LoginContent extends StatelessWidget {
                   ),
                   // TextField de Email
                   DefaultTextField(
+                    onChanged: (text) {
+                      bloc?.add(EmailChanged(email: text));
+                    },
                     text: 'Email', 
                     icon: Icons.email,
                     color: Colors.white,
                     ),
-      
+                   //TextField y Formulario de Password
                   DefaultTextField(
+                    onChanged: (text) {
+                      bloc?.add(PasswordChanged(password: text));
+                    },
                     text: 'Password', 
                     icon: Icons.lock,
                     color: Colors.white,

@@ -59,6 +59,7 @@ class Registercontent extends StatelessWidget {
                 children: [
                   _imageBanner(),
                   DefaultTextField(
+                   onChanged: (text) {},
                     text: 'Name',
                     icon: Icons.person,
                     Margin: EdgeInsets.only(top:35,left: 20,right: 50)
@@ -66,6 +67,7 @@ class Registercontent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
+                      onChanged: (text) {},
                     text: 'Email',
                     icon: Icons.email_rounded,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -73,6 +75,7 @@ class Registercontent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
+                      onChanged: (text) {},
                     text: 'Number',
                     icon: Icons.phone,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -81,6 +84,7 @@ class Registercontent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
+                      onChanged: (text) {},
                     text: 'Password',
                     icon: Icons.lock,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -89,6 +93,7 @@ class Registercontent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
+                      onChanged: (text) {},
                     text: 'Confirm Password',
                     icon: Icons.person,
                     Margin: EdgeInsets.only(left: 20,right: 50)
