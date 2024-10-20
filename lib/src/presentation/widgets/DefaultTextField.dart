@@ -8,6 +8,7 @@ class DefaultTextField extends StatelessWidget{
     IconData icon;
     Color color;
     EdgeInsetsGeometry Margin;
+    String? Function(String?)? Validator;
     
     
     DefaultTextField({
@@ -16,6 +17,7 @@ class DefaultTextField extends StatelessWidget{
       required this.onChanged,
       this.color = Colors.white,
       this.Margin = const EdgeInsets.only(left: 20, right: 20),
+      this.Validator
       
     });
 
@@ -24,6 +26,7 @@ class DefaultTextField extends StatelessWidget{
         return Container(
                   margin: Margin,
                   child: TextFormField(
+                    validator: Validator,
                     onChanged: (text){
                       onChanged(text);
                     },

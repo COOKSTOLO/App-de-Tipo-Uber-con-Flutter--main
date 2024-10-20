@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginBloc.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginState.dart';
+import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class LoginContent extends StatelessWidget {
 
-  LoginBloc? bloc;
+  Loginstate? state;
 
-  LoginContent(this.bloc);
+  LoginContent(this.state);
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: bloc?.state.formKey,
+      key: state.formKey,
       child: Stack(
         children: [
           Container(
@@ -103,7 +106,10 @@ class LoginContent extends StatelessWidget {
                   // TextField de Email
                   DefaultTextField(
                     onChanged: (text) {
-                      bloc?.add(EmailChanged(email: text));
+                      state?.add(EmailChanged(email: BlocFormItem(Value: text));
+                    },
+                    Validator: (value) { 
+                      return bloc?.state.email.Error;
                     },
                     text: 'Email', 
                     icon: Icons.email,
@@ -112,7 +118,7 @@ class LoginContent extends StatelessWidget {
                    //TextField y Formulario de Password
                   DefaultTextField(
                     onChanged: (text) {
-                      bloc?.add(PasswordChanged(password: text));
+                      bloc?.add(PasswordChanged(password: BlocFormItem(Value: text)));
                     },
                     text: 'Password', 
                     icon: Icons.lock,
