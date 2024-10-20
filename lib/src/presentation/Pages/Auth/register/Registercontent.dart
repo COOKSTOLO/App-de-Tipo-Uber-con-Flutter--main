@@ -97,9 +97,7 @@ class Registercontent extends StatelessWidget {
                     DefaultButton(
                       text: "Create User",
                       ButtomMargin: EdgeInsets.only(top: 20),
-                      onPressed: () {
-                        Bloc?.add(FormSubmit());
-                      },  
+                      onPressed: () {},
                     ),
                       SizedBox(height: 15),
                       _AlreadyHaveAccount(context),

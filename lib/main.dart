@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginBloc.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/register/RegisterPage.dart';
 import 'package:flutter_application_1/src/presentation/Pages/auth/login/LoginContent/LoginPage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,9 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SubjectBloc(),
+      //Inicializa un formulario de parte de logininitevent
+      create: (context) => LoginBloc()..add(LoginInitEvent()),
       child: MaterialApp(
         title: 'Empezando papu',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
               seedColor: const Color.fromARGB(255, 0, 0, 0)),

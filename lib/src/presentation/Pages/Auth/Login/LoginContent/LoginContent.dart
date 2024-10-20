@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginBloc.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
 
 
@@ -119,7 +120,9 @@ class LoginContent extends StatelessWidget {
         
         margin: EdgeInsets.only(top: 250,bottom: 15),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            bloc?.add(FormSubmit());
+          },
           style: ElevatedButton.styleFrom(
           backgroundColor:Colors.white
           ),
