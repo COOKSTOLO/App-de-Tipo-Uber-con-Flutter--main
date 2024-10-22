@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginContent extends StatelessWidget {
 
-  Loginstate? state;
+  Loginstate state;
 
   LoginContent(this.state);
 
@@ -106,10 +106,10 @@ class LoginContent extends StatelessWidget {
                   // TextField de Email
                   DefaultTextField(
                     onChanged: (text) {
-                      state?.add(EmailChanged(email: BlocFormItem(Value: text));
+                      context.read<LoginBloc>().add(EmailChanged(email: BlocFormItem(Value: text)));
                     },
                     Validator: (value) { 
-                      return bloc?.state.email.Error;
+                      return state.email.Error;
                     },
                     text: 'Email', 
                     icon: Icons.email,
@@ -118,7 +118,7 @@ class LoginContent extends StatelessWidget {
                    //TextField y Formulario de Password
                   DefaultTextField(
                     onChanged: (text) {
-                      bloc?.add(PasswordChanged(password: BlocFormItem(Value: text)));
+                      context.read<LoginBloc>().add(PasswordChanged(password: BlocFormItem(Value: text)));
                     },
                     text: 'Password', 
                     icon: Icons.lock,
@@ -133,7 +133,7 @@ class LoginContent extends StatelessWidget {
         margin: EdgeInsets.only(top: 250,bottom: 15),
         child: ElevatedButton(
           onPressed: () {
-            bloc?.add(FormSubmit());
+            context.read<LoginBloc>().add(FormSubmit());
           },
           style: ElevatedButton.styleFrom(
           backgroundColor:Colors.white
