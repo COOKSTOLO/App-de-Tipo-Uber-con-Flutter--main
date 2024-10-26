@@ -5,23 +5,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Loginstate extends Equatable {
 
-  final BlocFormItem email;
+  final BlocFormItem Email;
   final BlocFormItem password;
   final GlobalKey<FormState>? formKey;
 
   const Loginstate({
-    this.email = const BlocFormItem(Error: 'Email Invalido'),
+    this.Email = const BlocFormItem(Error: 'Email Invalido'),
     this.password = const BlocFormItem(Error: 'Contraseña Invalida'),
     this.formKey
   });
 
   Loginstate copyWith({
      GlobalKey<FormState>? formKey,
-     BlocFormItem? email,
+     BlocFormItem? Email,
      BlocFormItem? password,
   }){
     return Loginstate(
-      email: email ?? this.email,
+      Email: Email ?? this.Email,
       password:password ?? this.password,
       formKey: formKey
 
@@ -37,5 +37,5 @@ class Loginstate extends Equatable {
 
   @override
   // TODO: implement props
-  List<Object?> get props => [email,password];
+  List<Object?> get props => [Email,password];
 }

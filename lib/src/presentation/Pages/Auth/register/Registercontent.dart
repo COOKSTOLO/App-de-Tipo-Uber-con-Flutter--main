@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterBloc.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterEvent.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterState.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultButton.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class RegisterContent extends StatelessWidget {
 
@@ -77,7 +77,7 @@ class RegisterContent extends StatelessWidget {
               
                     DefaultTextField(
                       onChanged: (text) {
-                        context.read<RegisterBloc>().add(EmailChanged(email: BlocFormItem(Value: text)));
+                        context.read<RegisterBloc>().add(EmailChanged(Email: BlocFormItem(Value: text)));
                       },
                     text: 'Email',
                     icon: Icons.email_rounded,
@@ -86,7 +86,9 @@ class RegisterContent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
-                      onChanged: (text) {},
+                      onChanged: (text) {
+                    context.read<RegisterBloc>().add(NumberChanged(Number: BlocFormItem(Value: text)));
+                      },
                     text: 'Number',
                     icon: Icons.phone,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -95,7 +97,9 @@ class RegisterContent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
-                      onChanged: (text) {},
+                      onChanged: (text) {
+                        context.read<RegisterBloc>().add(PasswordChanged(password: BlocFormItem(Value: text)));
+                      },
                     text: 'Password',
                     icon: Icons.lock,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -104,7 +108,9 @@ class RegisterContent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
-                      onChanged: (text) {},
+                      onChanged: (text) {
+                        context.read<RegisterBloc>().add(WhenConfirmPasswordChanged(confirmpassword: BlocFormItem(Value: text)));
+                      },
                     text: 'Confirm Password',
                     icon: Icons.person,
                     Margin: EdgeInsets.only(left: 20,right: 50)
@@ -113,7 +119,9 @@ class RegisterContent extends StatelessWidget {
                     DefaultButton(
                       text: "Create User",
                       ButtomMargin: EdgeInsets.only(top: 20),
-                      onPressed: () {},
+                      onPressed: () {
+                        
+                      },
                     ),
                       SizedBox(height: 15),
                       _AlreadyHaveAccount(context),

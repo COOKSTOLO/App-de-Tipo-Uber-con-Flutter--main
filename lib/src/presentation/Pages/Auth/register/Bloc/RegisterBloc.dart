@@ -28,9 +28,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     on<EmailChanged>((event, emit){
       emit(
         state.copyWith(
-          email: BlocFormItem(
-            Value: event.email.Value,
-            Error: event.email.Value.isEmpty ? 'Ingresa un correcto correcto' : null
+          Email: BlocFormItem(
+            Value: event.Email.Value,
+            Error: event.Email.Value.isEmpty ? 'Ingresa un correcto correcto' : null
           ),
           formKey: formKey
         )
@@ -86,7 +86,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
     on<FormSubmit>((event, emit) {
       print('Name ${state.Name.Value}');
-      print('Email ${state.email.Value}');
+      print('Email ${state.Email.Value}');
       print('Number ${state.phone.Value}');
       print('Password ${state.password.Value}');
       print('ConfirmPassword ${state.confirmpassword.Value}');

@@ -10,8 +10,8 @@ class NameChanged extends RegisterInitEvent {
 }
 
 class EmailChanged extends RegisterInitEvent {
-  final BlocFormItem email;
-  EmailChanged({ required this.email});
+  final BlocFormItem Email;
+  EmailChanged({ required this.Email});
 }
 
 class NumberChanged extends RegisterInitEvent {

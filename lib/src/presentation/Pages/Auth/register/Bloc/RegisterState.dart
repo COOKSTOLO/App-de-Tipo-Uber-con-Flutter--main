@@ -5,7 +5,7 @@ import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 class RegisterState extends Equatable {
 
   final BlocFormItem Name;
-  final BlocFormItem email;
+  final BlocFormItem Email;
   final BlocFormItem phone;
   final BlocFormItem password;
   final BlocFormItem confirmpassword;
@@ -14,7 +14,7 @@ class RegisterState extends Equatable {
 
   const RegisterState({
      this.Name = const BlocFormItem(Error: 'ingresa el nombre'),
-     this.email = const BlocFormItem(Error: 'ingresa un email valido'),
+     this.Email = const BlocFormItem(Error: 'ingresa un email valido'),
      this.phone = const BlocFormItem(Error: 'Ingresa un numero valido'),
      this.password = const BlocFormItem(Error: 'Ingresa un contraseña Valida'),
      this.confirmpassword = const BlocFormItem(Error: 'Contraseña invalida'),  
@@ -24,7 +24,7 @@ class RegisterState extends Equatable {
 
    RegisterState copyWith({
    BlocFormItem? Name,
-   BlocFormItem? email,
+   BlocFormItem? Email,
    BlocFormItem? phone,
    BlocFormItem? password,
    BlocFormItem? confirmpassword,
@@ -32,7 +32,7 @@ class RegisterState extends Equatable {
   }){
     return RegisterState(
       Name: Name ?? this.Name,
-      email: email ?? this.email,
+      Email: Email ?? this.Email,
       phone: phone ?? this.phone,
       password: password ?? this.password,
       confirmpassword: confirmpassword ?? this.confirmpassword,
@@ -41,5 +41,5 @@ class RegisterState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [Name , email , phone , password , confirmpassword];
+  List<Object?> get props => [Name , Email , phone , password , confirmpassword];
 }

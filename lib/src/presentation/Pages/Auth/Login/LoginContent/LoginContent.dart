@@ -109,7 +109,7 @@ class LoginContent extends StatelessWidget {
                       context.read<LoginBloc>().add(EmailChanged(email: BlocFormItem(Value: text)));
                     },
                     Validator: (value) { 
-                      return state.email.Error;
+                      return state.Email.Error;
                     },
                     text: 'Email', 
                     icon: Icons.email,
