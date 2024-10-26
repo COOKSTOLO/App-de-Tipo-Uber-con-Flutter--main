@@ -11,7 +11,7 @@ class Loginstate extends Equatable {
 
   const Loginstate({
     this.email = const BlocFormItem(Error: 'Email Invalido'),
-    this.password = const BlocFormItem(Error: 'Ingresa Contraseña Valida'),
+    this.password = const BlocFormItem(Error: 'Contraseña Invalida'),
     this.formKey
   });
 

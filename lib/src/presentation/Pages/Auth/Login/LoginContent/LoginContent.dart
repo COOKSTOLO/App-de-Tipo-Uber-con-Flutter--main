@@ -120,6 +120,9 @@ class LoginContent extends StatelessWidget {
                     onChanged: (text) {
                       context.read<LoginBloc>().add(PasswordChanged(password: BlocFormItem(Value: text)));
                     },
+                    Validator: (value) { 
+                      return state.password.Error;
+                    },
                     text: 'Password', 
                     icon: Icons.lock,
                     color: Colors.white,
@@ -133,7 +136,12 @@ class LoginContent extends StatelessWidget {
         margin: EdgeInsets.only(top: 250,bottom: 15),
         child: ElevatedButton(
           onPressed: () {
-            context.read<LoginBloc>().add(FormSubmit());
+            if (state.formKey!.currentState!.validate()){
+              context.read<LoginBloc>().add(FormSubmit());
+            }
+            else{
+              print('El Formulario esta mal');
+            }
           },
           style: ElevatedButton.styleFrom(
           backgroundColor:Colors.white

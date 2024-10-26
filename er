@@ -1,0 +1,65 @@
+[33mcommit f06dac09d0e3f2c7542331d2eedbd06af1208cf4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Tue Oct 22 10:28:46 2024 -0600
+
+    Funciona la cuestion de formularios en en Login
+    Content
+
+[33mcommit db40ec27f8d5302c70e6bd81c410b4b8ca635cc0[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sun Oct 20 10:51:14 2024 -0600
+
+    despues termina de quitar todos los estados bloc
+    y cambialos a state
+
+[33mcommit 1ce80d90b625609db39bf34cd7b2a76f643ce200[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sun Oct 20 09:21:41 2024 -0600
+
+    Formulario funcionando
+
+[33mcommit fb3454278e4da605d64c5b1e71dcdc8fae990b0c[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sun Oct 20 08:46:23 2024 -0600
+
+    Sale correctamente el formSubmit en consola
+    con el mensaje de email y password que mande
+
+[33mcommit d4d230d76de31f13a11bbe5441eb08569b3fdcb1[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 17:47:28 2024 -0600
+
+    tiene varios bugs relaciones con el bloq statement
+    aregla el defaultButtom y mas
+
+[33mcommit 9cacebfcb6c6aa6a65c7650b155de29985892620[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 16:58:42 2024 -0600
+
+    agregue muchas carpetas y los cambios de estado
+     de dart t doc
+
+[33mcommit 5c37eba9341815d2a1bd1945cc6c8ada8053ed13[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 09:44:23 2024 -0600
+
+    listo calisto
+
+[33mcommit b70bd5bc053a54e430cb3bebfeeadd5b198de134[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 09:32:16 2024 -0600
+
+    cambie el color y termine pagina register
+
+[33mcommit 9ed03bbcc296f42df5c4a30649758cc41d1b4529[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 08:53:38 2024 -0600
+
+    Flujo de login register terminado y register
+    faltante el background photo
+
+[33mcommit 0373b4823e1260eed6448bf463920b1b734d3d8c[m
+Author: Cookstolo <106170598+COOKSTOLO@users.noreply.github.com>
+Date:   Sat Oct 19 08:41:27 2024 -0600
+
+    repositorio nuevo
