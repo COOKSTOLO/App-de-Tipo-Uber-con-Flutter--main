@@ -4,11 +4,11 @@ import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/
 import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class RegisterBloc extends Bloc<Registerevent, Registerstate> { 
+class RegisterBloc extends Bloc<RegisterEvent, RegisterState> { 
 
   final formKey = GlobalKey<FormState>();
 
-  RegisterBloc() : super(Registerstate()) {
+  RegisterBloc() : super(RegisterState()) {
     on<RegisterInitEvent>((event, emit) {
       emit(state.copyWith( formKey: formKey ));
     });

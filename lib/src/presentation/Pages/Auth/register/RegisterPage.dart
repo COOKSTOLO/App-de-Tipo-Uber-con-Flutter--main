@@ -15,9 +15,9 @@ class _RegisterpageState extends State<Registerpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<RegisterBloc, Registerstate>(
+      body: BlocBuilder<RegisterBloc, RegisterState>(
         builder: (context, state) {
-          return Registercontent(state);
+          return RegisterContent(state);
         },
       ),
     );

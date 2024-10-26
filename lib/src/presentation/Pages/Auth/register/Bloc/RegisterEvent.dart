@@ -1,8 +1,8 @@
 import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 
-abstract class Registerevent {}
+abstract class RegisterEvent {}
 
-class RegisterInitEvent extends Registerevent {}
+class RegisterInitEvent extends RegisterEvent {}
 
 class NameChanged extends RegisterInitEvent {
   final BlocFormItem Name;

@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 
-class Registerstate extends Equatable {
+class RegisterState extends Equatable {
 
   final BlocFormItem Name;
   final BlocFormItem email;
@@ -12,7 +12,7 @@ class Registerstate extends Equatable {
   final GlobalKey<FormState>? formKey;
 
 
-  const Registerstate({
+  const RegisterState({
      this.Name = const BlocFormItem(Error: 'ingresa el nombre'),
      this.email = const BlocFormItem(Error: 'ingresa un email valido'),
      this.phone = const BlocFormItem(Error: 'Ingresa un numero valido'),
@@ -22,7 +22,7 @@ class Registerstate extends Equatable {
   });
 
 
-   Registerstate copyWith({
+   RegisterState copyWith({
    BlocFormItem? Name,
    BlocFormItem? email,
    BlocFormItem? phone,
@@ -30,7 +30,7 @@ class Registerstate extends Equatable {
    BlocFormItem? confirmpassword,
    GlobalKey<FormState>? formKey
   }){
-    return Registerstate(
+    return RegisterState(
       Name: Name ?? this.Name,
       email: email ?? this.email,
       phone: phone ?? this.phone,

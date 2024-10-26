@@ -8,11 +8,11 @@ import 'package:flutter_application_1/src/presentation/widgets/DefaultButton.dar
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Registercontent extends StatelessWidget {
+class RegisterContent extends StatelessWidget {
 
-  Registerstate state;
+  RegisterState state;
 
-  Registercontent(this.state);
+ RegisterContent(this.state);
 
   @override
   Widget build(BuildContext context) {
