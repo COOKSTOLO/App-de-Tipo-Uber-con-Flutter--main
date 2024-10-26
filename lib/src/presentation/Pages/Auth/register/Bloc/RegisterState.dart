@@ -32,6 +32,14 @@ class Registerstate extends Equatable {
   }){
     return Registerstate(
       Name: Name ?? this.Name,
+      email: email ?? this.email,
+      phone: phone ?? this.phone,
+      password: password ?? this.password,
+      confirmpassword: confirmpassword ?? this.confirmpassword,
+      formKey: formKey
     );
   }
+
+  @override
+  List<Object?> get props => [Name , email , phone , password , confirmpassword];
 }

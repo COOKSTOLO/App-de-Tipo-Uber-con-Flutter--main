@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/presentation/Pages/Auth/Login/bloc/LoginEvent.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterBloc.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterEvent.dart';
+import 'package:flutter_application_1/src/presentation/Pages/Auth/register/Bloc/RegisterState.dart';
+import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultButton.dart';
 import 'package:flutter_application_1/src/presentation/widgets/DefaultTextField.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Registercontent extends StatelessWidget {
-  const Registercontent({super.key});
+
+  Registerstate state;
+
+  Registercontent(this.state);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +66,9 @@ class Registercontent extends StatelessWidget {
                 children: [
                   _imageBanner(),
                   DefaultTextField(
-                   onChanged: (text) {},
+                   onChanged: (text) {
+                    context.read<RegisterBloc>().add(NameChanged(Name: BlocFormItem(Value: text)));
+                   },
                     text: 'Name',
                     icon: Icons.person,
                     Margin: EdgeInsets.only(top:35,left: 20,right: 50)
@@ -67,7 +76,9 @@ class Registercontent extends StatelessWidget {
                     SizedBox(height: 5),
               
                     DefaultTextField(
-                      onChanged: (text) {},
+                      onChanged: (text) {
+                        context.read<RegisterBloc>().add(EmailChanged(email: BlocFormItem(Value: text)));
+                      },
                     text: 'Email',
                     icon: Icons.email_rounded,
                     Margin: EdgeInsets.only(left: 20,right: 50)
