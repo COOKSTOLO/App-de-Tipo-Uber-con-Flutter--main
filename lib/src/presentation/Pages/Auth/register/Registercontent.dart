@@ -49,7 +49,7 @@ class RegisterContent extends StatelessWidget {
           ),
       
           Container(
-            margin: EdgeInsets.only(left: 60, ),
+            margin: EdgeInsets.only(left: 60 ),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -71,24 +71,27 @@ class RegisterContent extends StatelessWidget {
                      onChanged: (text) {
                       context.read<RegisterBloc>().add(NameChanged(Name: BlocFormItem(Value: text)));
                      },
+                     Validator: (value) {
+                          return state.Name.Error;
+                        },
                       text: 'Name',
                       icon: Icons.person,
-                      Margin: EdgeInsets.only(top:35,left: 20,right: 50)
+                      Margin: EdgeInsets.only(top:5,left: 20,right: 50)
                       ),
-                      SizedBox(height: 5),
+                     
                 
                       DefaultTextField(
                         onChanged: (text) {
                           context.read<RegisterBloc>().add(EmailChanged(Email: BlocFormItem(Value: text)));
                         },
                         Validator: (value) {
-                          return state.Name.Error;
+                          return state.Email.Error;
                         },
                       text: 'Email',
                       icon: Icons.email_rounded,
                       Margin: EdgeInsets.only(left: 20,right: 50)
                       ),
-                      SizedBox(height: 5),
+                     
                 
                       DefaultTextField(
                         onChanged: (text) {
@@ -102,7 +105,7 @@ class RegisterContent extends StatelessWidget {
                       Margin: EdgeInsets.only(left: 20,right: 50)
                     
                       ),
-                      SizedBox(height: 5),
+                     
                 
                       DefaultTextField(
                         onChanged: (text) {
@@ -132,7 +135,7 @@ class RegisterContent extends StatelessWidget {
                 
                       DefaultButton(
                         text: "Create User",
-                        ButtomMargin: EdgeInsets.only(top: 20),
+                        ButtomMargin: EdgeInsets.only(top: 0),
                         onPressed: () {
                           if (state.formKey!.currentState!.validate()){
                             context.read<RegisterBloc>().add(FormSubmit());
@@ -177,6 +180,8 @@ class RegisterContent extends StatelessWidget {
                   SizedBox
                   (width: 7),
                   
+                  
+                  
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, 'Login');
@@ -191,11 +196,12 @@ class RegisterContent extends StatelessWidget {
                   
                 ],
                 );
+
   }
 
   Widget _imageBanner () { 
     return Container(
-      margin: EdgeInsets.only(top: 60),
+      margin: EdgeInsets.only(top: 45),
       alignment: Alignment.center,
       child: Image.asset(
         'assets/img/delivery.png',

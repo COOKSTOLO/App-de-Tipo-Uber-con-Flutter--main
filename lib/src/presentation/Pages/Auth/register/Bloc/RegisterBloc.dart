@@ -30,7 +30,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         state.copyWith(
           Email: BlocFormItem(
             Value: event.Email.Value,
-            Error: event.Email.Value.isEmpty ? 'Ingresa un correcto correcto' : null
+            Error: event.Email.Value.isEmpty ? 'Ingresa un correo valido' : null
           ),
           formKey: formKey
         )
