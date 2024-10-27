@@ -16,123 +16,140 @@ class RegisterContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          // con este se aplica un ligero margen en el lado derecho 
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end:Alignment.bottomRight,
-              colors: [
-                const Color.fromARGB(255, 0, 0, 0),
-                const Color.fromARGB(255, 5, 5, 46),
-                const Color.fromARGB(255, 0, 2, 24)
-              ]
-            )
+    return Form(
+      key: state.formKey,
+      child: Stack(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            // con este se aplica un ligero margen en el lado derecho 
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end:Alignment.bottomRight,
+                colors: [
+                  const Color.fromARGB(255, 0, 0, 0),
+                  const Color.fromARGB(255, 5, 5, 46),
+                  const Color.fromARGB(255, 0, 2, 24)
+                ]
+              )
+            ),
+            // Aqui tenemos las columnas de login verticales de login y register
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _textLoginRotated(context),
+                SizedBox(height: 50),
+                _textRegisterRotated(),
+                SizedBox(height: 90),
+              ],
+            ),
           ),
-          // Aqui tenemos las columnas de login verticales de login y register
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _textLoginRotated(context),
-              SizedBox(height: 50),
-              _textRegisterRotated(),
-              SizedBox(height: 90),
-            ],
-          ),
-        ),
-
-        Container(
-          margin: EdgeInsets.only(left: 60, ),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end:Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 4, 20, 78),
-                Color.fromARGB(255, 13, 50, 198),
-                Color.fromARGB(255, 32, 109, 198)
-              ]
-            )
-          ),
-          child: Stack(
-            children: [
-              _ImageBackground(context),
-              Column(
-                children: [
-                  _imageBanner(),
-                  DefaultTextField(
-                   onChanged: (text) {
-                    context.read<RegisterBloc>().add(NameChanged(Name: BlocFormItem(Value: text)));
-                   },
-                    text: 'Name',
-                    icon: Icons.person,
-                    Margin: EdgeInsets.only(top:35,left: 20,right: 50)
-                    ),
-                    SizedBox(height: 5),
-              
+      
+          Container(
+            margin: EdgeInsets.only(left: 60, ),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end:Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 4, 20, 78),
+                  Color.fromARGB(255, 13, 50, 198),
+                  Color.fromARGB(255, 32, 109, 198)
+                ]
+              )
+            ),
+            child: Stack(
+              children: [
+                _ImageBackground(context),
+                Column(
+                  children: [
+                    _imageBanner(),
                     DefaultTextField(
-                      onChanged: (text) {
-                        context.read<RegisterBloc>().add(EmailChanged(Email: BlocFormItem(Value: text)));
-                      },
-                    text: 'Email',
-                    icon: Icons.email_rounded,
-                    Margin: EdgeInsets.only(left: 20,right: 50)
-                    ),
-                    SizedBox(height: 5),
-              
-                    DefaultTextField(
-                      onChanged: (text) {
-                    context.read<RegisterBloc>().add(NumberChanged(Number: BlocFormItem(Value: text)));
-                      },
-                    text: 'Number',
-                    icon: Icons.phone,
-                    Margin: EdgeInsets.only(left: 20,right: 50)
-                  
-                    ),
-                    SizedBox(height: 5),
-              
-                    DefaultTextField(
-                      onChanged: (text) {
-                        context.read<RegisterBloc>().add(PasswordChanged(password: BlocFormItem(Value: text)));
-                      },
-                    text: 'Password',
-                    icon: Icons.lock,
-                    Margin: EdgeInsets.only(left: 20,right: 50)
+                     onChanged: (text) {
+                      context.read<RegisterBloc>().add(NameChanged(Name: BlocFormItem(Value: text)));
+                     },
+                      text: 'Name',
+                      icon: Icons.person,
+                      Margin: EdgeInsets.only(top:35,left: 20,right: 50)
+                      ),
+                      SizedBox(height: 5),
+                
+                      DefaultTextField(
+                        onChanged: (text) {
+                          context.read<RegisterBloc>().add(EmailChanged(Email: BlocFormItem(Value: text)));
+                        },
+                        Validator: (value) {
+                          return state.Name.Error;
+                        },
+                      text: 'Email',
+                      icon: Icons.email_rounded,
+                      Margin: EdgeInsets.only(left: 20,right: 50)
+                      ),
+                      SizedBox(height: 5),
+                
+                      DefaultTextField(
+                        onChanged: (text) {
+                      context.read<RegisterBloc>().add(NumberChanged(Number: BlocFormItem(Value: text)));
+                        },
+                        Validator: (value) {
+                          return state.phone.Error;
+                        },
+                      text: 'Number',
+                      icon: Icons.phone,
+                      Margin: EdgeInsets.only(left: 20,right: 50)
                     
-                    ),
-                    SizedBox(height: 5),
-              
-                    DefaultTextField(
-                      onChanged: (text) {
-                        context.read<RegisterBloc>().add(WhenConfirmPasswordChanged(confirmpassword: BlocFormItem(Value: text)));
-                      },
-                    text: 'Confirm Password',
-                    icon: Icons.person,
-                    Margin: EdgeInsets.only(left: 20,right: 50)
-                    ),
-              
-                    DefaultButton(
-                      text: "Create User",
-                      ButtomMargin: EdgeInsets.only(top: 20),
-                      onPressed: () {
-                        
-                      },
-                    ),
-                      SizedBox(height: 15),
-                      _AlreadyHaveAccount(context),
-                    
-                ],
-              
-              ),
-            ],
+                      ),
+                      SizedBox(height: 5),
+                
+                      DefaultTextField(
+                        onChanged: (text) {
+                          context.read<RegisterBloc>().add(PasswordChanged(password: BlocFormItem(Value: text)));
+                        },
+                        Validator: (value) {
+                          return state.password.Error;
+                        },
+                      text: 'Password',
+                      icon: Icons.lock,
+                      Margin: EdgeInsets.only(left: 20,right: 50)
+                       
+                      ),
+                      SizedBox(height: 5),
+                
+                      DefaultTextField(
+                        onChanged: (text) {
+                          context.read<RegisterBloc>().add(WhenConfirmPasswordChanged(confirmpassword: BlocFormItem(Value: text)));
+                        },
+                        Validator: (value) {
+                          return state.confirmpassword.Error;
+                        },
+                      text: 'Confirm Password',
+                      icon: Icons.person,
+                      Margin: EdgeInsets.only(left: 20,right: 50)
+                      ),
+                
+                      DefaultButton(
+                        text: "Create User",
+                        ButtomMargin: EdgeInsets.only(top: 20),
+                        onPressed: () {
+                          if (state.formKey!.currentState!.validate()){
+                            context.read<RegisterBloc>().add(FormSubmit());
+                          }
+                        },
+                      ),
+                        SizedBox(height: 15),
+                        _AlreadyHaveAccount(context),
+                      
+                  ],
+                
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
   

@@ -4,10 +4,11 @@ import 'package:flutter_application_1/src/presentation/Utils/BlocFormItem.dart';
 
 class RegisterState extends Equatable {
 
-  final BlocFormItem Name;
+  
   final BlocFormItem Email;
   final BlocFormItem phone;
   final BlocFormItem password;
+  final BlocFormItem Name;
   final BlocFormItem confirmpassword;
   final GlobalKey<FormState>? formKey;
 
